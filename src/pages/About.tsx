@@ -1,6 +1,37 @@
-import { Avatar, Card, Box, Flex } from "@chakra-ui/react";
-import { AbsoluteCenter } from "@chakra-ui/react";
+import {
+  Avatar,
+  Card,
+  Box,
+  Flex,
+  AbsoluteCenter,
+  Tooltip,
+  Text,
+} from "@chakra-ui/react";
 import photo from "../assets/my_photo.jpg";
+import { DiGit, DiPython, DiReact, DiGithubBadge } from "react-icons/di";
+import { FaLaptopCode } from "react-icons/fa";
+import { DiPostgresql } from "react-icons/di";
+import { TbSchoolFilled, TbSchool } from "react-icons/tb";
+import { MdPsychology } from "react-icons/md";
+
+const skills = [
+  {
+    icon: <MdPsychology size={32} />,
+    label: "Artificial Intelligence / Machine Learning Models",
+  },
+  { icon: <DiPython size={32} />, label: "Python" },
+  { icon: <DiReact size={32} />, label: "React" },
+  { icon: <DiGit size={32} />, label: "Git" },
+  { icon: <DiPostgresql size={32} />, label: "PostgreSQL" },
+];
+
+const contacts = [
+  {
+    icon: <DiGithubBadge size={32} />,
+    label: "Github",
+    href: "https://github.com/zsofiademjen21-lab",
+  },
+];
 
 function About() {
   return (
@@ -19,29 +50,73 @@ function About() {
                 <Avatar.Image src={photo} />
                 <Avatar.Fallback name="Zsófia Demjén-Nagy" />
               </Avatar.Root>
-
               <Card.Title fontSize="2xl">About me</Card.Title>
+              <Flex gap={2} marginLeft="auto">
+                {contacts.map(({ icon, label, href }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ color: "inherit" }}
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </Flex>
             </Flex>
-            <Card.Description color="white" textAlign="justify">
-              giant flemish hopping blanc de hotot lettuce chocolate creme
-              d'argent sable rex californian new zealand english lop dutch bunny
-              french cashmere fluffy satin lilac leporidae hare velveteen white
-              fuzzy himalayan tortoiseshell jersey wooly plush carrot angora
-              rabbit cinnamon opal black mini harlequin palomino cream holland
-              lop binky bunny sable fluffy hopping californian velveteen
-              palomino lilac cream hare holland lop tortoiseshell opal rex
-              lettuce harlequin dutch mini rabbit cashmere himalayan satin
-              angora cinnamon flemish creme d'argent blanc de hotot binky white
-              plush chocolate leporidae english lop carrot new zealand giant
-              black fuzzy jersey wooly french giant leporidae hare mini
-              californian white chocolate angora blanc de hotot plush cinnamon
-              lettuce english lop rabbit cream holland lop sable hopping opal
-              creme d'argent velveteen rex palomino french fuzzy lilac dutch
-              binky jersey wooly new zealand bunny tortoiseshell himalayan
-              carrot harlequin cashmere satin flemish fluffy black
+
+            <Flex direction="column" gap={2}>
+              <Flex align="center">
+                <Flex gap={2} align="center" width="360px">
+                  <TbSchoolFilled size={20} />
+                  <Text fontSize="medium">Biochemical Engineering BSc</Text>
+                </Flex>
+                <Flex gap={2} align="center">
+                  <FaLaptopCode size={20} />
+                  <Text fontSize="medium">IBM Q&A Test Developer Intern</Text>
+                </Flex>
+              </Flex>
+              <Flex align="center">
+                <Flex gap={2} align="center" width="360px">
+                  <TbSchool size={20} />
+                  <Text fontSize="medium">
+                    Artificial Intelligence MSc - In progress
+                  </Text>
+                </Flex>
+              </Flex>
+            </Flex>
+
+            <Card.Description
+              fontSize="medium"
+              color="white"
+              textAlign="justify"
+            >
+              I am Zsófia Demjén-Nagy, I am pursuing a Master's degree in
+              Artificial Intelligence at Johannes Kepler University Linz. I have
+              a BSc degree in Biochemical Engineering from Budapest University
+              of Technology and Economics. Currently I am working at IBM as a QA
+              Test Developer Intern, where I focus on software quality assurance
+              and I also contribute to application development. My background
+              spans both the natural sciences and software engineering, giving
+              me a unique perspective on problem-solving. I enjoy working at the
+              intersection of technology and science, and I am passionate about
+              applying AI techniques to solve real-world problems. Outside of
+              work and studies, I love exploring new tools, building personal
+              projects, and continuously expanding my skill set.
             </Card.Description>
           </Card.Body>
-          <Card.Footer>Skills:</Card.Footer>
+          <Card.Footer>
+            Skills:
+            {skills.map(({ icon, label }) => (
+              <Tooltip.Root key={label}>
+                <Tooltip.Trigger asChild>{icon}</Tooltip.Trigger>
+                <Tooltip.Positioner>
+                  <Tooltip.Content>{label}</Tooltip.Content>
+                </Tooltip.Positioner>
+              </Tooltip.Root>
+            ))}
+          </Card.Footer>
         </Card.Root>
       </AbsoluteCenter>
     </Box>

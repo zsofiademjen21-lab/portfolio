@@ -4,8 +4,8 @@ import { NavLink } from "react-router";
 const links = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Blogs", to: "/blogs" },
   { label: "Projects", to: "/projects" },
+  { label: "Contacts", to: "/contacts" },
 ];
 
 function Header() {
