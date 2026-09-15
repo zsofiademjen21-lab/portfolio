@@ -1,11 +1,12 @@
 import "../App.css";
-import { AbsoluteCenter, Box, Image, VStack } from "@chakra-ui/react";
+import { Image, VStack } from "@chakra-ui/react";
 import aiMiAlgorithm from "../assets/ai-mi-algorithm-svgrepo-com.svg";
+import { Separator, Box } from "@chakra-ui/react";
+import PageWrapper from "../components/PageWrapper";
 
 const Home: React.FC = () => {
   return (
-    <Box position="relative" height="100vh">
-      <AbsoluteCenter>
+    <PageWrapper>
         <VStack
           bg="blackAlpha.800"
           p={10}
@@ -18,12 +19,14 @@ const Home: React.FC = () => {
           <Box color="white" fontSize="5xl" fontWeight="bold">
             Hi, I'm Zsófia Demjén-Nagy
           </Box>
+          <Separator borderColor="whiteAlpha.300" width="100%" />
           <Box color="white" fontSize="2xl">
             Artificial Intelligence Master's Student
           </Box>
           <Box color="white" fontSize="2xl">
             Q&A Test Developer Intern
           </Box>
+          <Separator borderColor="whiteAlpha.300" width="100%" />
           <Image
             src={aiMiAlgorithm}
             boxSize="120px"
@@ -31,8 +34,7 @@ const Home: React.FC = () => {
             mt={4}
           />
         </VStack>
-      </AbsoluteCenter>
-    </Box>
+    </PageWrapper>
   );
 };
 

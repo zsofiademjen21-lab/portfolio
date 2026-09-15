@@ -1,18 +1,18 @@
 import {
   Avatar,
   Card,
-  Box,
   Flex,
-  AbsoluteCenter,
   Tooltip,
   Text,
 } from "@chakra-ui/react";
 import photo from "../assets/my_photo.jpg";
-import { DiGit, DiPython, DiReact, DiGithubBadge } from "react-icons/di";
+import { DiGit, DiPython, DiReact } from "react-icons/di";
 import { FaLaptopCode } from "react-icons/fa";
 import { DiPostgresql } from "react-icons/di";
 import { TbSchoolFilled, TbSchool } from "react-icons/tb";
 import { MdPsychology } from "react-icons/md";
+import PageWrapper from "../components/PageWrapper";
+import PageCard from "../components/PageCard";
 
 const skills = [
   {
@@ -25,25 +25,10 @@ const skills = [
   { icon: <DiPostgresql size={32} />, label: "PostgreSQL" },
 ];
 
-const contacts = [
-  {
-    icon: <DiGithubBadge size={32} />,
-    label: "Github",
-    href: "https://github.com/zsofiademjen21-lab",
-  },
-];
-
 function About() {
   return (
-    <Box position="relative" height="100vh">
-      <AbsoluteCenter>
-        <Card.Root
-          width="700px"
-          height="500px"
-          bg="blackAlpha.800"
-          borderColor="black"
-          color="white"
-        >
+    <PageWrapper>
+        <PageCard>
           <Card.Body gap="6">
             <Flex gap={6} align="center">
               <Avatar.Root size="2xl" shape="full" flexShrink={0}>
@@ -51,19 +36,6 @@ function About() {
                 <Avatar.Fallback name="Zsófia Demjén-Nagy" />
               </Avatar.Root>
               <Card.Title fontSize="2xl">About me</Card.Title>
-              <Flex gap={2} marginLeft="auto">
-                {contacts.map(({ icon, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ color: "inherit" }}
-                  >
-                    {icon}
-                  </a>
-                ))}
-              </Flex>
             </Flex>
 
             <Flex direction="column" gap={2}>
@@ -117,9 +89,8 @@ function About() {
               </Tooltip.Root>
             ))}
           </Card.Footer>
-        </Card.Root>
-      </AbsoluteCenter>
-    </Box>
+        </PageCard>
+    </PageWrapper>
   );
 }
 

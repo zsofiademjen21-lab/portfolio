@@ -2,7 +2,6 @@ import {
   Card,
   Box,
   Flex,
-  AbsoluteCenter,
   Text,
   Button,
   Separator,
@@ -10,6 +9,8 @@ import {
 
 import { MdOutlineMailOutline, MdOutlinePlace } from "react-icons/md";
 import { DiGithubBadge } from "react-icons/di";
+import PageWrapper from "../components/PageWrapper";
+import PageCard from "../components/PageCard";
 
 const contactItems = [
   {
@@ -25,7 +26,7 @@ const contactItems = [
 
 const socialLinks = [
   {
-    icon: <DiGithubBadge size={28} />,
+    icon: <DiGithubBadge size={32} />,
     label: "GitHub",
     href: "https://github.com/zsofiademjen21-lab",
   },
@@ -33,21 +34,14 @@ const socialLinks = [
 
 function Contacts() {
   return (
-    <Box position="relative" height="100vh">
-      <AbsoluteCenter>
-        <Card.Root
-          width="700px"
-          height="500px"
-          bg="blackAlpha.800"
-          borderColor="black"
-          color="white"
-        >
+    <PageWrapper>
+        <PageCard>
           <Card.Body gap="6">
             <Card.Title fontSize="2xl">Get in touch</Card.Title>
 
             <Card.Description fontSize="md" color="white" textAlign="justify">
               Feel free to reach out for collaboration, opportunities, or just
-              to connect. I'm always happy to hear from you.
+              to connect.
             </Card.Description>
 
             <Separator borderColor="whiteAlpha.300" />
@@ -86,14 +80,7 @@ function Contacts() {
               </Text>
               <Flex gap={4}>
                 {socialLinks.map(({ icon, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{ color: "inherit" }}
-                    title={label}
-                  >
+                  <a key={label} href={href} title={label}>
                     <Box
                       color="whiteAlpha.800"
                       _hover={{ color: "white" }}
@@ -110,13 +97,13 @@ function Contacts() {
           <Card.Footer>
             <a href="mailto:zsofia.demjen21@gmail.com">
               <Button colorScheme="whiteAlpha" variant="outline" color="white">
+                <MdOutlineMailOutline />
                 Send me an email
               </Button>
             </a>
           </Card.Footer>
-        </Card.Root>
-      </AbsoluteCenter>
-    </Box>
+        </PageCard>
+    </PageWrapper>
   );
 }
 

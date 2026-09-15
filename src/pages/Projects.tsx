@@ -1,25 +1,18 @@
 import {
   Card,
-  Box,
   Flex,
-  AbsoluteCenter,
   Text,
   Button,
 } from "@chakra-ui/react";
 
 import { DiGithubBadge } from "react-icons/di";
+import PageWrapper from "../components/PageWrapper";
+import PageCard from "../components/PageCard";
 
 function Projects() {
   return (
-    <Box position="relative" height="100vh">
-      <AbsoluteCenter>
-        <Card.Root
-          width="700px"
-          height="500px"
-          bg="blackAlpha.800"
-          borderColor="black"
-          color="white"
-        >
+    <PageWrapper>
+        <PageCard>
           <Card.Body gap="6">
             <Flex gap={6} align="center">
               <Card.Title fontSize="2xl">Projects</Card.Title>
@@ -48,14 +41,19 @@ function Projects() {
               rel="noreferrer"
             >
               <Button colorScheme="whiteAlpha" variant="outline" color="white">
-                <DiGithubBadge size={20} />
+                <DiGithubBadge
+                  style={{
+                    fontSize: "1.8rem",
+                    width: "1.8rem",
+                    height: "1.8rem",
+                  }}
+                />
                 View GitHub
               </Button>
             </a>
           </Card.Footer>
-        </Card.Root>
-      </AbsoluteCenter>
-    </Box>
+        </PageCard>
+    </PageWrapper>
   );
 }
 
