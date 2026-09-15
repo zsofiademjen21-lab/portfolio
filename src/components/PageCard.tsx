@@ -3,8 +3,9 @@ import { Card } from "@chakra-ui/react";
 function PageCard({ children }: { children: React.ReactNode }) {
   return (
     <Card.Root
-      width="700px"
-      height="500px"
+      width={{ base: "90vw", md: "700px" }}
+      maxWidth="700px"
+      minHeight={{ base: "auto", md: "500px" }}
       bg="blackAlpha.800"
       borderColor="black"
       color="white"

@@ -1,9 +1,16 @@
-import { Box, AbsoluteCenter } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 function PageWrapper({ children }: { children: React.ReactNode }) {
   return (
-    <Box position="relative" height="100vh">
-      <AbsoluteCenter>{children}</AbsoluteCenter>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      minHeight="calc(100vh - 72px)"
+      py={{ base: 8, md: 0 }}
+      px={{ base: 4, md: 0 }}
+    >
+      {children}
     </Box>
   );
 }

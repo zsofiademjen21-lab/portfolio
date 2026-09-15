@@ -39,8 +39,8 @@ function About() {
             </Flex>
 
             <Flex direction="column" gap={2}>
-              <Flex align="center">
-                <Flex gap={2} align="center" width="360px">
+              <Flex align={{ base: "flex-start", md: "center" }} direction={{ base: "column", md: "row" }} gap={{ base: 2, md: 0 }}>
+                <Flex gap={2} align="center" width={{ base: "auto", md: "360px" }}>
                   <TbSchoolFilled size={20} />
                   <Text fontSize="medium">Biochemical Engineering BSc</Text>
                 </Flex>
@@ -50,7 +50,7 @@ function About() {
                 </Flex>
               </Flex>
               <Flex align="center">
-                <Flex gap={2} align="center" width="360px">
+                <Flex gap={2} align="center">
                   <TbSchool size={20} />
                   <Text fontSize="medium">
                     Artificial Intelligence MSc - In progress
