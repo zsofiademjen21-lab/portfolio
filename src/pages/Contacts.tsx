@@ -1,17 +1,11 @@
-import {
-  Card,
-  Box,
-  Flex,
-  Text,
-  Button,
-  Separator,
-} from "@chakra-ui/react";
+import { Card, Box, Flex, Text, Button, Separator } from "@chakra-ui/react";
 
 import { MdOutlineMailOutline, MdOutlinePlace } from "react-icons/md";
 import { DiGithubBadge } from "react-icons/di";
 import PageCard from "../components/PageCard";
+import type { ContactItem, SocialLink } from "../interfaces/Contacts";
 
-const contactItems = [
+const contactItems: ContactItem[] = [
   {
     icon: <MdOutlinePlace size={20} />,
     label: "Budapest, Hungary",
@@ -23,7 +17,7 @@ const contactItems = [
   },
 ];
 
-const socialLinks = [
+const socialLinks: SocialLink[] = [
   {
     icon: <DiGithubBadge size={32} />,
     label: "GitHub",

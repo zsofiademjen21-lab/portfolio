@@ -12,8 +12,9 @@ import { DiPostgresql } from "react-icons/di";
 import { TbSchoolFilled, TbSchool } from "react-icons/tb";
 import { MdPsychology } from "react-icons/md";
 import PageCard from "../components/PageCard";
+import type { Skill } from "../interfaces/About";
 
-const skills = [
+const skills: Skill[] = [
   {
     icon: <MdPsychology size={32} />,
     label: "Artificial Intelligence / Machine Learning Models",

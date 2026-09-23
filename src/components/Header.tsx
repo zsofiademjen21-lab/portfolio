@@ -1,7 +1,8 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router";
+import type { CustomRoute } from "../interfaces/Route";
 
-const links = [
+const links: CustomRoute[] = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
   { label: "Projects", to: "/projects" },
